@@ -1,0 +1,5 @@
+
+[package]
+name = "shared-lib-runner"
+version = "0.1.0"
+authors = ["Kyle"]
