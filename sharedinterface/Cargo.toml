@@ -1,0 +1,8 @@
+[package]
+name = "sharedinterface"
+version = "0.1.0"
+authors = ["Kyle"]
+edition = "2021"
+
+[dependencies]
+abi_stable = "*"

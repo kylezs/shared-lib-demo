@@ -1,22 +1,15 @@
-// For the first shared library
-mod libfirst_shared_lib {
-    extern "C" {
-        pub fn entry_point();
-    }
-}
+extern crate sharedinterface;
 
-// For the second shared library
-mod libsecond_shared_lib {
-    extern "C" {
-        pub fn entry_point();
-    }
-}
+use sharedinterface::{load_root_module_in_directory, Shared1LibRef};
 
 fn main() {
     println!("Executing runner entry point");
 
-    unsafe {
-        libfirst_shared_lib::entry_point();
-        libsecond_shared_lib::entry_point();
-    }
+    // 2. Deleting the target directory and then compiling results in error. Second time succeeds. This is likely due to compilation order.
+    let library: Shared1LibRef = load_root_module_in_directory("./target/debug".as_ref())
+        .unwrap_or_else(|e| panic!("{}", e));
+
+    library.entry_point().unwrap()();
+
+    println!("Finished executing runner entry point");
 }

@@ -5,9 +5,11 @@ edition = "2021"
 
 [lib]
 crate-type = ["cdylib"]
-name = "first_shared_lib"
+name = "shared1lib"
 path = 'src/lib.rs'
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+abi_stable = "*"
+sharedinterface = { path = "../sharedinterface" }
