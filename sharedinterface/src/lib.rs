@@ -23,7 +23,6 @@ impl RootModule for Shared1LibRef {
     const VERSION_STRINGS: VersionStrings = package_version_strings!();
 }
 
-// Is this loading the pre-compiled dylib???
 /// This loads the root from the library in the `directory` folder.
 pub fn load_root_module_in_directory(directory: &Path) -> Result<Shared1LibRef, LibraryError> {
     println!("Loading shared1lib from directory: {:?}", directory);
