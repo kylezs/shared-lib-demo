@@ -12,5 +12,5 @@ pub extern "C" fn entry_point(n: u32, e: MyEnum) -> MyEnum {
         "Executing shared1 entry point from REALLY NEW rust version. n: {}, e: {:?}",
         n, e
     );
-    MyEnum::B
+    MyEnum::C
 }
