@@ -1,22 +1,19 @@
 // For the first shared library
-mod libfirst_shared_lib {
-    extern "C" {
-        pub fn entry_point();
-    }
+#[repr(C)]
+pub enum MyEnum {
+    A,
+    B,
+    C,
 }
 
-// For the second shared library
-mod libsecond_shared_lib {
-    extern "C" {
-        pub fn entry_point();
-    }
+extern "C" {
+    pub fn entry_point(n: u32, e: MyEnum) -> MyEnum;
 }
 
 fn main() {
     println!("Executing runner entry point");
 
     unsafe {
-        libfirst_shared_lib::entry_point();
-        libsecond_shared_lib::entry_point();
+        entry_point(23, MyEnum::A);
     }
 }
