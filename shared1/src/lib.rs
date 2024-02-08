@@ -1,4 +1,4 @@
-#[no_mangle]
+#[stabby::export]
 pub extern "C" fn entry_point() {
     println!("Executing shared1 entry point");
 }

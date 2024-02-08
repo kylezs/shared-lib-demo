@@ -4,3 +4,8 @@ name = "shared-lib-runner"
 version = "0.1.0"
 authors = ["Kyle"]
 build = "build.rs"
+
+[dependencies]
+stabby = "*"
+# Ensures correct compilation order.
+shared1 = { path = "../shared1" }
