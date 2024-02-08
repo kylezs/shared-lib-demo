@@ -1,7 +1,7 @@
 [workspace]
 resolver = "2"
 
-members = ["shared1", "runner", "shared2"]
+members = ["shared1", "runner"]
 
 [profile.release]
 # Substrate runtime requires unwinding.
